@@ -1,0 +1,18 @@
+{
+    "Declaration SUBMITTED by EMPLOYEE": [],
+    "Declaration APPROVED by SUPERVISOR": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration REJECTED by SUPERVISOR": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration APPROVED by PRE_APPROVER": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration REJECTED by PRE_APPROVER": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration REJECTED by MISSING": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration APPROVED by ADMINISTRATION": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration REJECTED by ADMINISTRATION": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration APPROVED by BUDGET OWNER": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration REJECTED by BUDGET OWNER": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Declaration FOR_APPROVAL by ADMINISTRATION": ["Declaration SUBMITTED by EMPLOYEE"],
+    "Request Payment": ["Declaration SUBMITTED by EMPLOYEE", "Declaration APPROVED by SUPERVISOR", 
+     "Declaration REJECTED by SUPERVISOR", "Declaration APPROVED by PRE_APPROVER", "Declaration REJECTED by PRE_APPROVER",
+     "Declaration REJECTED by MISSING", "Declaration APPROVED by ADMINISTRATION", "Declaration REJECTED by ADMINISTRATION", 
+     "Declaration APPROVED by BUDGET OWNER", "Declaration REJECTED by BUDGET OWNER", "Declaration FOR_APPROVAL by ADMINISTRATION"],
+     "Payment Handled": ["Request Payment"]
+}
