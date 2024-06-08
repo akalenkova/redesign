@@ -105,6 +105,31 @@ added_activities = set()
 completion_times = {}
 final_connections = {}
 
+time1 = np.average(times["Declaration APPROVED-REJECTED by ADMINISTRATION"])
+time1 += (1-knockouts["Declaration APPROVED-REJECTED by ADMINISTRATION"])*np.average(times["Declaration APPROVED-REJECTED by BUDGET OWNER"])
+time1 += (1-knockouts["Declaration APPROVED-REJECTED by ADMINISTRATION"])*(1-knockouts["Declaration APPROVED-REJECTED by BUDGET OWNER"])*np.average(times["Declaration APPROVED-REJECTED by SUPERVISOR"])
+#time1 += (1-knockouts["Declaration APPROVED-REJECTED by ADMINISTRATION"])*(1-knockouts["Declaration APPROVED-REJECTED by BUDGET OWNER"])*(1-knockouts["Declaration APPROVED-REJECTED by SUPERVISOR"])*np.average(times["Payment Handled"])
+#time1 += (1-knockouts["Declaration APPROVED-REJECTED by ADMINISTRATION"])*(1-knockouts["Declaration APPROVED-REJECTED by BUDGET OWNER"])*(1-knockouts["Declaration APPROVED-REJECTED by SUPERVISOR"])*np.average(times["Request Payment"])
+
+print("Time 1")
+print(time1)
+
+
+tadm = times["Declaration APPROVED-REJECTED by ADMINISTRATION"]
+tsup = times["Declaration APPROVED-REJECTED by SUPERVISOR"]
+time_adm_sup = []
+for t1 in tadm:
+   for t2 in tsup:
+       time_adm_sup.append(t1+ (1-knockouts["Declaration APPROVED-REJECTED by ADMINISTRATION"])*t2)
+time_adm_sup = np.random.choice(time_adm_sup, 10000)
+timemax = max_time_between_two(time_adm_sup, times["Declaration APPROVED-REJECTED by BUDGET OWNER"])
+
+time2 = np.average(timemax)
+print("Time 2")
+print(time2)
+
+
+
 # PICK A NEW ACTIVITY AND CONNECT IT
 while len(all_new_activities) > 0:
     priority = np.iinfo(np.int16).max +1 
